@@ -189,6 +189,7 @@ class DNSProxyServer(ThreadingUDPServer):
         self.host_lines = load_hosts(hosts_file)
         self.disable_cache = disable_cache
         self.cache = {}
+        print "Host port %s %s" % (host, port)
         ThreadingUDPServer.__init__(self, (host, port), DNSProxyHandler)
 
 if __name__ == '__main__':
